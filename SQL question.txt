@@ -1,0 +1,5 @@
+SELECT s.BuyerEmail
+FROM Sales s
+JOIN SalesDetails sd ON s.SaleID = sd.SaleID
+GROUP BY s.BuyerEmail
+HAVING AVG(sd.ProductQuantity * sd.ProductPrice) > 1000;
